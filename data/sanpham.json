@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name":"khanmat",
+    "label":"Khăn ",
+    "description":"Khăn lau mặt tốt cho da",
+    "price": "15.000",
+    "amount": "10"
+  },
+  {
+    "id": 2,
+    "name":"giayan",
+    "label":"Khăn ",
+    "description":"Khăn lau mặt tốt cho da",
+    "price": "15.000",
+    "amount": 10
+  },{
+  "id": 1,
+  "name":"khanmat",
+  "label":"Khăn ",
+  "description":"Khăn lau mặt tốt cho da",
+  "price": "15.000",
+  "amount": 10
+},{
+  "id": 1,
+  "name":"khanmat",
+  "label":"Khăn ",
+  "description":"Khăn lau mặt tốt cho da",
+  "price": "15.000",
+  "amount": 10
+}
+]

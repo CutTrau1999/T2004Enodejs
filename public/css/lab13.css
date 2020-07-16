@@ -1,0 +1,48 @@
+body{
+    background-color: blue;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+h1{
+    text-align: center;
+    color: white;
+    font-size: 40px;
+}
+h2{
+    text-align: center;
+    color: whitesmoke;
+    font-size: 30px;
+}
+.item{
+    float: left;
+    width: 100%;
+    margin: 15px 0;
+    background-color: #766a76;
+
+    border-radius: 5px;
+    padding: 20px;
+}
+.item p{
+    font-size: 20px;
+    color: #ffffff;
+}
+.item .temp{
+    font-size: 35px;
+}
+.item .desc{
+    font-size: 16px;
+}
+.item .img{
+    position: absolute;
+    right: 10px;
+    top: 40px;
+}
+.section{
+    float: :left;
+    width: 100%;
+}
+#map{
+    width: 100%;
+    float: left;
+    height: 500px;
+}

@@ -1,0 +1,37 @@
+[
+{
+  "id": 1,
+  "name":"hanoi",
+  "label":"Hà Nội",
+  "description":"Hà Nội, thủ đô Việt Nam, nổi tiếng",
+  "area": "3.359 km"
+},
+{
+  "id": 2,
+  "name":"haiphong",
+  "label":"Hải Phòng",
+  "description":"Hải Phòng , thủ đô Việt Nam, nổi tiếng",
+  "area": "3.359 km"
+},
+{
+  "id": 3,
+  "name":"cairo",
+  "label":"cairo, Ai Cập",
+  "description":"Cairo, thủ đô Việt Nam, nổi tiếng",
+  "area": "3.359 km"
+},
+{
+  "id": 4,
+  "name":"london",
+  "label":"London, Anh",
+  "description":"London, thủ đô Việt Nam, nổi tiếng",
+  "area": "3.359 km"
+},
+{
+  "id": 5,
+  "name":"new york",
+  "label":"New York, Mỹ",
+  "description":"New York, thủ đô Việt Nam, nổi tiếng",
+  "area": "3.359 km"
+}
+]
