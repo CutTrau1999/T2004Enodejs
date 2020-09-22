@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Music World - Search Result</title>
+    <link rel="stylesheet" href="css/header.css"/>
+    <link rel="stylesheet" href="css/layout.css"/>
+    <link rel="stylesheet" href="css/custom6.css"/>
+    <link rel="stylesheet" href="css/custom4.css"/>
+    <link rel="stylesheet" href="css/custom5.css"/>
+    <link rel="stylesheet" href="css/footer.css"/>
+    <link rel="stylesheet" href="libs/fontawesome/css/all.css"/>
+
+</head>
+<body>
+<header class="header">
+    <div class="container">
+        <div class="z-top-bar">
+            <div class="z-top-bar-inner">
+                <a class="logo" href="/home">Zing Mp3</a>
+                <div class="menu-bar">
+                    <div class="z-menu-bar-inner">
+                        <ul class="z-nav">
+                            <li><a class="nav-link" href="/home">HOME</a></li>
+                            <li><a class="nav-link" href="/jazz">JAZZ</a></li>
+                            <li><a class="nav-link" href="/rock">ROCK</a></li>
+                            <li><a class="nav-link" href="/pop">POP</a></li>
+                            <li><a class="nav-link" href="/classical">CLASSICAL</a></li>
+                            <li><a class="nav-link" href="/rap">RAP</a></li>
+                            <li><a class="nav-link" href="/album">ALBUM</a></li>
+                            <li><a class="nav-link" href="/artist">ARTIST</a></li>
+                            <li><a class="nav-link" href="https://signinn.herokuapp.com/#" target="_blank">VIP</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="z-search-wrap">
+                    <form action="/search">
+                        <div class="z-input-group">
+                            <div class="search-icon">
+                            </div>
+                            <div class="input-wrapper">
+                                <input type="text" name="keyword"  class="form-search" placeholder="Search for artists, bands, tracks, podcasts"/>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="user-profile">
+                    <div class="text-vll">
+                        <a href="https://signinn.herokuapp.com/#" target="_blank" class="text-vll-1">LOGIN</a>
+                    </div>
+                    <div class="icon-vll">
+                        <a href="https://signinn.herokuapp.com/#" target="_blank">
+                            <i class="far fa-user"></i>
+                        </a>
+                    </div>
+                    <div class="icon-vll">
+                        <a href="https://signinn.herokuapp.com/#" target="_blank">
+                            <i class="far fa-bell"></i>
+                        </a>
+                    </div>
+                    <div class="icon-vll">
+                        <a href="https://signinn.herokuapp.com/#" target="_blank" class="icon-vll-1">
+                            <i class="fas fa-upload"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<section class="main">
+    <div class="container">
+        <div id="wrap">
+            <div class="search-info">
+                <div class="z-search-info">
+                    <a href="/search">All</a>
+                </div>
+                <div class="z-search-info">
+                    <a href="/artist">Artist</a>
+                </div>
+                <div class="z-search-info">
+                    <a href="/searchsong">Song</a>
+                </div>
+                <div class="z-search-info">
+                    <a href="/album">Album</a>
+                </div>
+            </div>
+            <div class="x-search">
+                <div class="x-artist">
+                    <h2>Artist</h2>
+                    <% khs.map(function (v) { %>
+                    <div class="z-artist">
+
+
+                        <a href="/artistinfo">
+                            <img class="avatar-z" src="data:image/jpeg;base64,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" width="50px" height="50px"/>
+                        </a>
+
+                            <div class="x-artist-info">
+                                <a href="/artistinfo"><h4><%=v.singer%></h4></a>
+                                <a href="/artist">  <p>Artist</p></a>
+                            </div>
+
+                    </div>
+                    <% }) %>
+
+                </div>
+
+
+                <div class="x-song1">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="z-name">Song</h2>
+                            <% khs.map(function (v) { %>
+                            <ul class="list-song">
+                                <li class="bor-bottom">
+
+                                    <a href="/play/<%=v.name%>" class="thumb">
+                                        <div class="image3">
+                                            <img class="image__img" src="https://photo-resize-zmp3.zadn.vn/w94_r1x1_jpeg/cover/4/d/e/4/4de4dadb62cc5bc37efdea4b84bf5184.jpg"/>
+                                            <div class="image__overlay image__overlay--primary">
+                                                <div class="image__title">
+                                                    <svg width="0.7em" height="0.7em" viewBox="0 0 16 16" class="bi bi-play" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" d="M10.804 8L5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-info">
+
+                                            <div class="title">
+                                                <a href="/play/<%=v.name%>">  <%= v.name%></a>
+                                            </div>
+                                            <a class="artist5" href="#">
+                                                <p><%=v.singer%></p>
+                                            </a>
+                                        </div>
+                                    </a>
+
+                                </li>
+
+                            </ul>
+                            <% }) %>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="list-z">
+                    <h2 class="z-name">Album Hot</h2>
+                    <div class="song-z">
+                        <a href="/jazz">
+                            <div class="image1-z">
+                                <img class="image__img" src="https://photo-resize-zmp3.zadn.vn/w480_r1x1_jpeg/cover/3/4/8/e/348e0c2e28d3f193fc5d1e80ff64b357.jpg"/>
+                                <div class="image__overlay image__overlay--primary">
+                                    <div class="image__title">
+                                        <svg width="2em" height="3em" viewBox="0 0 16 16" class="bi bi-play" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M10.804 8L5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="texthere">
+                            <a href="/jazz">Hot Jazz</a>
+                        </div>
+                    </div>
+
+                    <div class="song-z">
+                        <a href="/rock">
+                            <div class="image1-z">
+                                <img class="image__img" src="https://photo-resize-zmp3.zadn.vn/w480_r1x1_jpeg/cover/2/f/7/5/2f757b0d99d4d0b608f7c9bee0cfafce.jpg"/>
+                                <div class="image__overlay image__overlay--primary">
+                                    <div class="image__title">
+                                        <svg width="2em" height="3em" viewBox="0 0 16 16" class="bi bi-play" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M10.804 8L5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="texthere">
+                            <a href="/rock">Hot Rock</a>
+                        </div>
+                    </div>
+
+                    <div class="song-z">
+                        <a href="/rap">
+                            <div class="image1-z">
+                                <img class="image__img" src="https://photo-resize-zmp3.zadn.vn/w480_r1x1_jpeg/cover/2/f/7/5/2f757b0d99d4d0b608f7c9bee0cfafce.jpg"/>
+                                <div class="image__overlay image__overlay--primary">
+                                    <div class="image__title">
+                                        <svg width="2em" height="3em" viewBox="0 0 16 16" class="bi bi-play" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M10.804 8L5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="texthere">
+                            <a href="/rap">Hot Rap</a>
+                        </div>
+                    </div>
+
+                    <div class="song-z">
+                        <a href="/classical">
+                            <div class="image1-z">
+                                <img class="image__img" src="https://photo-resize-zmp3.zadn.vn/w480_r1x1_jpeg/cover/2/f/7/5/2f757b0d99d4d0b608f7c9bee0cfafce.jpg"/>
+                                <div class="image__overlay image__overlay--primary">
+                                    <div class="image__title">
+                                        <svg width="2em" height="3em" viewBox="0 0 16 16" class="bi bi-play" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M10.804 8L5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="texthere">
+                            <a href="/classical">Classical</a>
+                        </div>
+                    </div>
+
+
+                    <div class="song-z">
+                        <a href="/pop"">
+                            <div class="image1-z">
+                                <img class="image__img" src="https://photo-resize-zmp3.zadn.vn/w480_r1x1_jpeg/cover/8/d/e/4/8de40f187b75e652974430bbfe90e699.jpg"/>
+                                <div class="image__overlay image__overlay--primary">
+                                    <div class="image__title">
+                                        <svg width="2em" height="3em" viewBox="0 0 16 16" class="bi bi-play" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M10.804 8L5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="texthere">
+                            <a href="/pop">That Night</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="footer">
+    <div class="container">
+        <div class="copyright">
+            <span class="z-logo"></span>
+            <div class="z-license-info">
+                <div class="z-copyright">A Product By T2004E-FPT APTECH</div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

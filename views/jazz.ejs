@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jazz Music</title>
+    <link rel="stylesheet" href="css/layout.css"/>
+    <link rel="stylesheet" href="css/custom4.css"/>
+    <link rel="stylesheet" href="css/header.css"/>
+    <link rel="stylesheet" href="css/footer.css"/>
+    <link rel="stylesheet" href="libs/fontawesome/css/all.css"/>
+</head>
+<body>
+<header class="header">
+    <div class="container">
+        <div class="z-top-bar">
+            <div class="z-top-bar-inner">
+                <a class="logo" href="/home">Zing Mp3</a>
+                <div class="menu-bar">
+                    <div class="z-menu-bar-inner">
+                        <ul class="z-nav">
+                            <li><a class="nav-link" href="/home">HOME</a></li>
+                            <li><a class="nav-link" href="/jazz">JAZZ</a></li>
+                            <li><a class="nav-link" href="/rock">ROCK</a></li>
+                            <li><a class="nav-link" href="/pop">POP</a></li>
+                            <li><a class="nav-link" href="/classical">CLASSICAL</a></li>
+                            <li><a class="nav-link" href="/rap">RAP</a></li>
+                            <li><a class="nav-link" href="/album">ALBUM</a></li>
+                            <li><a class="nav-link" href="/artist">ARTIST</a></li>
+                            <li><a class="nav-link" href="https://signinn.herokuapp.com/#" target="_blank">VIP</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="z-search-wrap">
+                    <form action="/search">
+                        <div class="z-input-group">
+                            <div class="search-icon">
+                            </div>
+                            <div class="input-wrapper">
+                                <input type="text" name="keyword"  class="form-search" placeholder="Search for artists, bands, tracks, podcasts"/>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="user-profile">
+                    <div class="text-vll">
+                        <a href="https://signinn.herokuapp.com/#" target="_blank" class="text-vll-1">LOGIN</a>
+                    </div>
+                    <div class="icon-vll">
+                        <a href="https://signinn.herokuapp.com/#" target="_blank">
+                            <i class="far fa-user"></i>
+                        </a>
+                    </div>
+                    <div class="icon-vll">
+                        <a href="https://signinn.herokuapp.com/#" target="_blank">
+                            <i class="far fa-bell"></i>
+                        </a>
+                    </div>
+                    <div class="icon-vll">
+                        <a href="https://signinn.herokuapp.com/#" target="_blank" class="icon-vll-1">
+                            <i class="fas fa-upload"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<section class="main">
+    <div class="container">
+        <div id="wrap">
+            <div class="list">
+                <h2>Jazz</h2>
+                <%khs.map(function (e) { %>
+                <div class="song">
+                    <a href="/play/<%=e.name%>">
+                        <div class="image1">
+                            <img class="image__img" src="<%=e.thumbnailURL%>"/>
+                            <div class="image__overlay image__overlay--primary">
+                                <div class="image__title">
+                                    <svg width="2em" height="3em" viewBox="0 0 16 16" class="bi bi-play" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M10.804 8L5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="texthere">
+                        <a href="/play/<%=e.name%>"><%=e.name%></a>
+                    </div>
+                </div>
+                <%})%>
+
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="footer">
+    <div class="container">
+        <div class="copyright">
+            <span class="z-logo"></span>
+            <div class="z-license-info">
+                <div class="z-copyright">A Product By T2004E-FPT APTECH</div>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+</body>
+</html>

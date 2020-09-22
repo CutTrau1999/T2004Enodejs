@@ -1,75 +1,389 @@
 <!DOCTYPE html>
-<html lang="en">
-<%- include("head") %>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>HOME</title>
+    <link rel="stylesheet" type="text/css" href="css/header.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="libs/fontawesome/css/all.css"/>
+    <link rel="stylesheet" href="libs/nivoslider/default/default.css"/>
+    <link rel="stylesheet" href="libs/nivoslider/nivo-slider.css"/>
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="libs/fontawesome/css/all.css"/>
+</head>
 <body>
-<section class="section">
+<header class="header">
     <div class="container">
-        <form action="/" method="get" class="form-group">
-            <input type="text" name="cityname" class="form-control"/>
-            <button type="submit" class="btn btn-danger">Tim kiem</button>
-        </form>
-        <h1>Thoi tiet hom nay va ngay mai</h1>
-        <h2>Thanh pho: </h2>
-        <h3>Ban la nguoi thu: <%= counter %></h3>
-        <div class="row" id="weather">
+        <div class="z-top-bar">
+            <div class="z-top-bar-inner">
+                <a class="logo" href="/home">Zing Mp3</a>
+                <div class="menu-bar">
+                    <div class="z-menu-bar-inner">
+                        <ul class="z-nav">
+                            <li><a class="nav-link" href="/home">HOME</a></li>
+                            <li><a class="nav-link" href="/jazz">JAZZ</a></li>
+                            <li><a class="nav-link" href="/rock">ROCK</a></li>
+                            <li><a class="nav-link" href="/pop">POP</a></li>
+                            <li><a class="nav-link" href="/classical">CLASSICAL</a></li>
+                            <li><a class="nav-link" href="/rap">RAP</a></li>
+                            <li><a class="nav-link" href="/album">ALBUM</a></li>
+                            <li><a class="nav-link" href="/artist">ARTIST</a></li>
+                            <li><a class="nav-link" href="https://signinn.herokuapp.com/#" target="_blank">VIP</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="z-search-wrap">
+                    <form action="/search">
+                        <div class="z-input-group">
+                            <div class="search-icon">
+                            </div>
+                            <div class="input-wrapper">
+                                <input type="text" name="keyword"  class="form-search" placeholder="Search for artists, bands, tracks, podcasts"/>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="user-profile">
+                    <div class="text-vll">
+                        <a href="https://signinn.herokuapp.com/#" target="_blank" class="text-vll-1">LOGIN</a>
+                    </div>
+                    <div class="icon-vll">
+                        <a href="https://signinn.herokuapp.com/#" target="_blank">
+                            <i class="far fa-user"></i>
+                        </a>
+                    </div>
+                    <div class="icon-vll">
+                        <a href="https://signinn.herokuapp.com/#" target="_blank">
+                            <i class="far fa-bell"></i>
+                        </a>
+                    </div>
+                    <div class="icon-vll">
+                        <a href="https://signinn.herokuapp.com/#" target="_blank" class="icon-vll-1">
+                            <i class="fas fa-upload"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<section class="main-nivo">
+    <div class="container">
+        <div class="slider-wrapper theme-default">
+            <div id="slider" class="nivoSlider">
+                <img src="https://photo-zmp3.zadn.vn/banner/f/8/2/4/f82492fcae7dfe5fef0c7cb36926ce60.jpg"/>
+                <img src="https://photo-zmp3.zadn.vn/banner/d/e/5/2/de52529edfcf3da1b48b58ff1543afa8.jpg"/>
+                <img src="https://photo-zmp3.zadn.vn/banner/6/5/7/0/6570f78d5603b413399892de1bda53c2.jpg"/>
+                <img src="https://photo-zmp3.zadn.vn/banner/4/9/c/d/49cd47297876654a44c33d46ec80fc2f.jpg"/>
+                <img src="https://photo-zmp3.zadn.vn/banner/6/d/e/e/6deeed08ba9cdb793201a1a2290bbe61.jpg"/>
+            </div>
         </div>
     </div>
 </section>
-<section class="section">
-    <div id="map"></div>
-</section>
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript">
-    $.ajax({
-        url:"http://api.openweathermap.org/data/2.5/forecast",
-        method:"GET",
-        data:{
-            q:"<%= city %>",
-            appid:"09a71427c59d38d6a34f89b47d75975c",
-            units:"metric"
-        },
-        success: function (rs) {
-            $("h2").text(rs.city.name+", "+rs.city.country);
-            rs.list.map(function (e) {
-                let item_html = "<div class=\"col-md-3 col-sm-4 col-xs-6\">\n" +
-                    "                <div class=\"item\">\n" +
-                    "                    <p class=\"datetime\">"+e.dt_txt+"</p>\n" +
-                    "                    <p class=\"temp\">"+e.main.temp+"<span><sup>o</sup></span>C</p>\n" +
-                    "                    <p class=\"desc\">"+e.weather[0].description+"</p>\n" +
-                    "                    <img src=\"http://openweathermap.org/img/wn/"+e.weather[0].icon+"@2x.png\"/>\n" +
-                    "                </div>\n" +
-                    "            </div>";
-                $("#weather").append(item_html);
-            })
-        }
-    });
-    //map
-    function initMap() {
-        // The location of Uluru
-        var uluru = {lat: 21.0288, lng: 105.7795};
-        var coord = navigator.geolocation.getCurrentPosition(getLocation)
+<section class="main-hover">
+    <div class="container">
+        <div id="wrap">
+            <div class="list">
+                <h2 class="z-box-title">CATEGORY</h2>
+                <div class="song">
+                    <a href="/pop">
+                        <div class="image1">
+                            <img class="image__img" src="https://photo-resize-zmp3.zadn.vn/w480_r1x1_jpeg/cover/c/4/a/6/c4a65f93f721069039f946f399a9f5a8.jpg"/>
+                            <div class="image__overlay image__overlay--primary">
+                                <div class="image__title">
+                                    <svg width="2em" height="3em" viewBox="0 0 16 16" class="bi bi-play" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M10.804 8L5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="texthere">
+                        <a href="/pop" class="z-box-title-2">POP</a>
+                    </div>
+                </div>
 
-        function getLocation(position) {
-            let uluru = {
-                lat: position.coords.latitude,
-                lng: position.coords.longitude,
-            }
-            initMap();
-        }
-        function initMap() {
-            // The map, centered at Uluru
-            var map = new google.maps.Map(
-                document.getElementById('map'), {zoom: 24, center: uluru});
-            // The marker, positioned at Uluru
-            var marker = new google.maps.Marker({
-                position: uluru, map: map,
-                label: "Dai hoc FPT Ha Noi"
-            });
-        }
-    }
-</script>
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?callback=initMap">
+                <div class="song">
+                    <a href="/jazz">
+                        <div class="image1">
+                            <img class="image__img" src="https://photo-resize-zmp3.zadn.vn/w480_r1x1_jpeg/cover/0/b/e/5/0be5e24c4d4c70999f90f9039c427478.jpg"/>
+                            <div class="image__overlay image__overlay--primary">
+                                <div class="image__title">
+                                    <svg width="2em" height="3em" viewBox="0 0 16 16" class="bi bi-play" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M10.804 8L5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="texthere">
+                        <a href="/jazz" class="z-box-title-2">JAZZ</a>
+                    </div>
+                </div>
+
+                <div class="song">
+                    <a href="/rock">
+                        <div class="image1">
+                            <img class="image__img" src="https://photo-resize-zmp3.zadn.vn/w480_r1x1_jpeg/cover/5/9/a/b/59abf94a149a426e419aa38580073365.jpg"/>
+                            <div class="image__overlay image__overlay--primary">
+                                <div class="image__title">
+                                    <svg width="2em" height="3em" viewBox="0 0 16 16" class="bi bi-play" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M10.804 8L5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="texthere">
+                        <a href="/rock" class="z-box-title-2">ROCK</a>
+                    </div>
+                </div>
+
+                <div class="song">
+                    <a href="/classical">
+                        <div class="image1">
+                            <img class="image__img" src="https://photo-resize-zmp3.zadn.vn/w480_r1x1_jpeg/cover/1/1/7/4/1174de60bc4d99d042f1f49ba276fc0f.jpg"/>
+                            <div class="image__overlay image__overlay--primary">
+                                <div class="image__title">
+                                    <svg width="2em" height="3em" viewBox="0 0 16 16" class="bi bi-play" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M10.804 8L5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="texthere">
+                        <a href="/classical" class="z-box-title-2">CLASSICAL</a>
+                    </div>
+                </div>
+
+                <div class="song">
+                    <a href="/rap">
+                        <div class="image1">
+                            <img class="image__img" src="https://photo-resize-zmp3.zadn.vn/w480_r1x1_jpeg/cover/3/f/b/e/3fbe84c6d3afb90188c46368eeea4bf5.jpg"/>
+                            <div class="image__overlay image__overlay--primary">
+                                <div class="image__title">
+                                    <svg width="2em" height="3em" viewBox="0 0 16 16" class="bi bi-play" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M10.804 8L5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="texthere">
+                        <a href="/rap" class="z-box-title-2">RAP</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="list">
+                <h2 class="z-box-title">ALBUM</h2>
+                <div class="song">
+                    <a href="play/Cold%20Water">
+                        <div class="image1">
+                            <img class="image__img" src="https://photo-resize-zmp3.zadn.vn/w480_r1x1_jpeg/cover/c/4/a/6/c4a65f93f721069039f946f399a9f5a8.jpg"/>
+                            <div class="image__overlay image__overlay--primary">
+                                <div class="image__title">
+                                    <svg width="2em" height="3em" viewBox="0 0 16 16" class="bi bi-play" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M10.804 8L5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="texthere">
+                        <a href="play/Cold%20Water" class="z-box-title-2">Cold Water</a>
+                    </div>
+                </div>
+
+                <div class="song">
+                    <a href="play/Teenage%20Dream">
+                        <div class="image1">
+                            <img class="image__img" src="https://photo-resize-zmp3.zadn.vn/w480_r1x1_jpeg/cover/0/b/e/5/0be5e24c4d4c70999f90f9039c427478.jpg"/>
+                            <div class="image__overlay image__overlay--primary">
+                                <div class="image__title">
+                                    <svg width="2em" height="3em" viewBox="0 0 16 16" class="bi bi-play" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M10.804 8L5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="texthere">
+                        <a href="play/Teenage%20Dream" class="z-box-title-2">Teenage Dream</a>
+                    </div>
+                </div>
+
+                <div class="song">
+                    <a href="play/Call%20And%20Response">
+                        <div class="image1">
+                            <img class="image__img" src="https://photo-resize-zmp3.zadn.vn/w480_r1x1_jpeg/cover/5/9/a/b/59abf94a149a426e419aa38580073365.jpg"/>
+                            <div class="image__overlay image__overlay--primary">
+                                <div class="image__title">
+                                    <svg width="2em" height="3em" viewBox="0 0 16 16" class="bi bi-play" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M10.804 8L5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="texthere">
+                        <a href="play/Call%20And%20Response" class="z-box-title-2">Call and Response</a>
+                    </div>
+                </div>
+
+                <div class="song">
+                    <a href="play/Duo%20tones">
+                        <div class="image1">
+                            <img class="image__img" src="https://photo-resize-zmp3.zadn.vn/w480_r1x1_jpeg/cover/1/1/7/4/1174de60bc4d99d042f1f49ba276fc0f.jpg"/>
+                            <div class="image__overlay image__overlay--primary">
+                                <div class="image__title">
+                                    <svg width="2em" height="3em" viewBox="0 0 16 16" class="bi bi-play" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M10.804 8L5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="texthere">
+                        <a href="play/Duo%20tones" class="z-box-title-2">Douton</a>
+                    </div>
+                </div>
+
+                <div class="song">
+                    <a href="play/Love%20Poem">
+                        <div class="image1">
+                            <img class="image__img" src="https://photo-resize-zmp3.zadn.vn/w480_r1x1_jpeg/cover/3/f/b/e/3fbe84c6d3afb90188c46368eeea4bf5.jpg"/>
+                            <div class="image__overlay image__overlay--primary">
+                                <div class="image__title">
+                                    <svg width="2em" height="3em" viewBox="0 0 16 16" class="bi bi-play" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M10.804 8L5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="texthere">
+                        <a href="play/Love%20Poem" class="z-box-title-2">Love Poem</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="main-hover">
+    <div class="container">
+        <div class="wrap">
+            <div class="list">
+                <h2 class="z-box-title">MV HOT</h2>
+                <div class="mv-hot-2">
+                    <a href="play/Street's%20Disciple">
+                        <div class="image1">
+                            <img class="image__img" src="https://photo-resize-zmp3.zadn.vn/w480_r1x1_jpeg/cover/1/1/7/4/1174de60bc4d99d042f1f49ba276fc0f.jpg"/>
+                            <div class="image__overlay image__overlay--primary">
+                                <div class="image__title">
+                                    <svg width="2em" height="3em" viewBox="0 0 16 16" class="bi bi-play" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M10.804 8L5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="mv-hot-3">
+                    <div class="song-3">
+                        <a href="play/Street's%20Disciple">
+                            <div class="image1">
+                                <img class="image__img" src="https://photo-resize-zmp3.zadn.vn/w480_r1x1_jpeg/cover/0/b/e/5/0be5e24c4d4c70999f90f9039c427478.jpg"/>
+                                <div class="image__overlay image__overlay--primary">
+                                    <div class="image__title">
+                                        <svg width="2em" height="3em" viewBox="0 0 16 16" class="bi bi-play" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M10.804 8L5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="texthere">
+                            <a href="play/Street's%20Disciple" class="z-box-title-2">JAZZ</a>
+                        </div>
+                    </div>
+
+                    <div class="song-3">
+                        <a href="/play/Made%20you%20look">
+                            <div class="image1">
+                                <img class="image__img" src="https://photo-resize-zmp3.zadn.vn/w480_r1x1_jpeg/cover/0/b/e/5/0be5e24c4d4c70999f90f9039c427478.jpg"/>
+                                <div class="image__overlay image__overlay--primary">
+                                    <div class="image__title">
+                                        <svg width="2em" height="3em" viewBox="0 0 16 16" class="bi bi-play" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M10.804 8L5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="texthere">
+                            <a href="/play/Made%20you%20look" class="z-box-title-2">Made you look</a>
+                        </div>
+                    </div>
+
+                    <div class="song-4">
+                        <a href="/play/The%20Black%20Box">
+                            <div class="image1">
+                                <img class="image__img" src="https://photo-resize-zmp3.zadn.vn/w480_r1x1_jpeg/cover/0/b/e/5/0be5e24c4d4c70999f90f9039c427478.jpg"/>
+                                <div class="image__overlay image__overlay--primary">
+                                    <div class="image__title">
+                                        <svg width="2em" height="3em" viewBox="0 0 16 16" class="bi bi-play" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M10.804 8L5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="texthere">
+                            <a href="/play/The%20Black%20Box" class="z-box-title-2">The Black Box</a>
+                        </div>
+                    </div>
+
+                    <div class="song-4">
+                        <a href="/play/Cho%20Anh%20Nhe">
+                            <div class="image1">
+                                <img class="image__img" src="https://photo-resize-zmp3.zadn.vn/w480_r1x1_jpeg/cover/0/b/e/5/0be5e24c4d4c70999f90f9039c427478.jpg"/>
+                                <div class="image__overlay image__overlay--primary">
+                                    <div class="image__title">
+                                        <svg width="2em" height="3em" viewBox="0 0 16 16" class="bi bi-play" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M10.804 8L5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="texthere">
+                            <a href="/play/Cho%20Anh%20Nhe" class="z-box-title-2">Cho anh nhe</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="footer">
+    <div class="container">
+        <div class="copyright">
+            <span class="z-logo"></span>
+            <div class="z-license-info">
+                <div class="z-copyright">A Product By T2004E-FPT APTECH</div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="libs/nivoslider/jquery.nivo.slider.js"></script>
+<script type="text/javascript">
+    $('#slider').nivoSlider();
 </script>
 </body>
 </html>
