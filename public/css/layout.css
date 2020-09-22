@@ -1,0 +1,79 @@
+/**{*/
+/*    padding: 0;*/
+/*    margin: 0;*/
+/*    box-sizing: border-box;*/
+/*}*/
+body{
+    font-family: Roboto,sans-serif;
+    font-size: 14px;
+    background-color: white;
+    color: #333333;
+    font-weight: 400;
+    line-height: 1.5;
+}
+a, body {
+    font-size: 16px;
+    font-weight: 500;
+    color: #32323d;
+    line-height: 1.45;
+    margin: 8px 0 3px;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+
+
+/*.header, .main, .footer{*/
+/*    float:left;*/
+/*    width: 100%;*/
+/*    background-color: white;*/
+/*}*/
+
+/*.header-left{*/
+/*    float: left;*/
+/*    width: 50px;*/
+/*}*/
+/*.header-right{*/
+/*    float: right;*/
+/*    width: 60%;*/
+/*}*/
+/*.content{*/
+/*    margin: 0 auto;*/
+/*    width: 100%;*/
+/*}*/
+/*.sidebar{*/
+/*    float: right;*/
+/*    width: 10%;*/
+/*}*/
+/*.header{*/
+/*    background-color: white;*/
+/*    padding: 10px 0;*/
+/*}*/
+
+/*#wrap {*/
+/*    width: 1000px;*/
+/*    margin: 20px auto;*/
+/*    height: auto;*/
+/*}*/
+
+/*.list{*/
+/*    width: 100%;*/
+/*    height:auto;*/
+/*    float: left;*/
+/*    padding: 20px;*/
+/*    margin: 40px;*/
+/*}*/
+/*.song{*/
+/*    width: 17%;*/
+/*    height: 200px;*/
+/*    margin: 10px;*/
+/*    margin-bottom: 50px;*/
+/*    float: left;*/
+/*}*/
+/*.texthere{*/
+/*    width: 100%;*/
+/*    height: auto;*/
+/*    margin-top: 10px;*/
+/*}*/
+
+
+

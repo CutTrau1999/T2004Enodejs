@@ -1,0 +1,195 @@
+.x-search{
+    width: 75%;
+    height: auto;
+    float: right;
+}
+.x-artist{
+    width: 100%;
+    height: auto;
+    float: left;
+    border-bottom: 1px solid #efefef;
+    background-color: white;
+
+}
+
+.search-info{
+    width: 20%;
+    height: 500px;
+    float: left;
+}
+
+.z-search-info{
+    width: 100%;
+    height: auto;
+    float: left;
+    padding: 5px 10px;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 5px;
+
+}
+
+.z-search-info:hover{
+    transform: scale(1);
+    border-left: 5px solid #65509e;
+    z-index: 2;
+    padding-left: 10px;
+    background: #efefef;
+}
+
+.z-hor-link{
+    border-color: #65509e;
+    color: #6e55b4;
+    background-color: #efefef;
+    font-weight: 500;
+}
+
+
+.x-song{
+    width: 100%;
+    height: auto;
+    float: left;
+    background-color: white;
+}
+
+.x-song1{
+    width: 100%;
+    height: auto;
+    float: right;
+    background-color: white;
+    margin: 50px 0;
+}
+
+.z-artist{
+    width: 100%;
+    height: auto;
+    float: left;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #efefef;
+}
+
+
+.avatar-z{
+    border-radius: 50%;
+    margin-top: 30px;
+    float: left;
+}
+.x-artist-info{
+    width: auto;
+    height: auto;
+    float: left;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+.picture-z{
+    width: 250px;
+    height: 150px;
+// border: 1px solid red;
+    margin-right: 5px;
+    float: left;
+    position: relative;
+    display: inline-block;
+}
+
+.z-song-info{
+    width: auto;
+    height: auto;
+
+    float: left;
+    margin-top: 30px;
+    margin-left: 10px;
+}
+
+.z-song{
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    float: left;
+    border-bottom: 1px solid #32323d;
+    padding-bottom: 30px;
+}
+
+.bor-bottom{
+   // border: 1px solid red;
+    float: left;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid #efefef;
+}
+
+.bor-bottom:hover{
+    transform: scale(1);
+    z-index: 2;
+    padding-left: 10px;
+    background: #efefef;
+}
+
+.image3{
+    width: 50px;
+    height: 50px;
+// border: 1px solid red;
+    margin-right: 15px;
+    float: left;
+    position: relative;
+    display: inline-block;
+}
+
+.card-info{
+    width: auto;
+    height: auto;
+   // border: 1px solid red;
+    margin-left: 15px;
+
+}
+
+.title{
+    width: auto;
+    height: auto;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.36;
+    color: #32323d;
+}
+
+.artist5{
+    width: auto;
+    height: auto;
+    float: left;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.33;
+    color: #a0a0a0;
+    margin-top: 5px;
+}
+
+.list-z{
+    width: 100%;
+    height: auto;
+    float: right;
+}
+
+.image1-z{
+    position: relative;
+    width: 100%;
+    height: 70%;
+    display: inline-block;
+}
+
+.song-z{
+    width: 17%;
+    height: 200px;
+    margin: 10px;
+
+    float: left;
+}
+li:lastchild{
+    list-style: none;
+}
+
+li{
+    list-style: none;
+}
+.z-name{
+    padding-bottom: 15px;
+}

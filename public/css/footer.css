@@ -1,0 +1,26 @@
+.copyright{
+    height: 150px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #888;
+    margin-right: 4px;
+}
+
+.z-logo{
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    background-image: url(https://zjs.zadn.vn/zmp3-desktop/releases/v0.1.31/images/logo-mp-3.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.z-license-info{
+    margin-left: 10px;
+}
+
+.z-copyright{
+    font-size: 12px;
+}

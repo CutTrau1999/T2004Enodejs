@@ -1,0 +1,332 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-size: 14px;
+    font-family: Roboto,sans-serif;
+    background-color: #ffffff;
+    font-weight: 400;
+    line-height: 1.5;
+}
+.container{
+    width: 1200px;
+    height: auto;
+    margin: 0 auto;
+    background-color: white;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+a{
+    text-decoration: none;
+}
+.header{
+    top: 0;
+    width: 100%;
+    z-index: 1060;
+    margin-bottom: 50px;
+}
+.z-top-bar{
+    height: 124px;
+    position: relative;
+    transition: transform .3s;
+    background-size: cover;
+    background-position: center;
+}
+.z-top-bar-inner{
+    display: flex;
+    justify-content: space-between;
+    width: 1026px;
+    margin: 0 auto;
+    transition: transform .3s;
+}
+.logo{
+    background-image: url("https://musicworldstores.com/wp-content/uploads/2017/05/MWColored300dpi.png");
+    background-repeat: no-repeat;
+    display: block;
+    width: 100px;
+    height: 50px;
+    background-size: cover;
+    font-size: 0;
+    margin-top: 15px;
+    flex-shrink: 0;
+    z-index: 2;
+    transition: transform .3s;
+}
+.menu-bar{
+    height: 54px;
+    width: 100%;
+    top: 70px;
+    left: 0;
+    position: absolute;
+    z-index: 0;
+    transition: transform .3s;
+    margin-left: 150px;
+}
+.z-menu-bar-inner{
+    position: relative;
+    text-transform: uppercase;
+    width: 1026px;
+    margin: 0 auto;
+    transition: transform .3s;
+}
+.z-nav{
+    width: 1026px;
+    display: inline-block;
+    white-space: nowrap;
+    position: relative;
+}
+.nav-link{
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.8;
+    float: left;
+    padding: 20px 30px 15px 5px;
+    color: black;
+}
+.text-upper{
+    text-transform: uppercase;
+}
+.nav-link.active{
+    color: #65509e;
+}
+.z-nav li{
+    list-style: none;
+}
+.z-nav li a{
+    text-decoration: none;
+}
+.z-nav li a:hover{
+    color: #6e55b4;
+}
+.z-nav li:last-child{
+    list-style: none;
+}
+.z-search-wrap{
+    width: auto;
+    height: 50px;
+    border-radius: 4px;
+    position: relative;
+    /*margin: 15px 15px 0px 7px;*/
+    margin-top: 15px;
+}
+.z-input-group{
+    width: 580px;
+    position: relative;
+    height: 50px;
+    bottom: 20px;
+    padding-left: 5px;
+    /*border: 1px solid rgba(219,219,219,.5);*/
+}
+.search-icon{
+    width: 10px;
+    position: relative;
+    left: 7px;
+    top: 30px;
+    font-size: 18px;
+    line-height: 66%;
+    color: #495057;
+}
+.form-search{
+    width: 540px;
+    height: 40px;
+    padding: 5px 30px;
+    border: 1px solid antiquewhite;
+    border-radius: 20px;
+    font-weight: 400;
+    font-size: 12px;
+    margin-top: 20px;
+}
+.user-profile{
+    position: relative;
+    float: right;
+    width: auto;
+    margin-right: 40px;
+    margin-top: 15px;
+    color: black;
+}
+.far{
+    color: black;
+}
+.fas{
+    color: black;
+}
+.icon-vll{
+    display: flex;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    align-items: center;
+    justify-content: center;
+    background-color: #f1f1f1;
+    border-radius: 50%;
+    float: right;
+    margin-left: 10px;
+}
+.text-vll{
+    width: auto;
+    height: auto;
+    float: right;
+    padding-right: 15px;
+    color: #32323d;
+    padding-top: 10px;
+}
+.text-vll-1{
+    color: #32323d;
+}
+.text-vll-1:hover{
+    text-decoration: none;
+    color: #6e55b4;
+}
+#wrap {
+    width: 1150px;
+    margin: 0 auto;
+}
+
+.list{
+    width: 100%;
+    height: auto;
+    float: left;
+    padding: 20px;
+    margin: 0 40px 0 40px;
+}
+.z-box-title{
+    font-size: 24px;
+    font-weight: 700;
+    color: #32323d;
+}
+.song{
+    width: 17%;
+    height: 200px;
+    margin: 10px;
+    margin-bottom: 50px;
+    float: left;
+}
+.texthere{
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+.z-box-title-2{
+    color: #32323d;
+    font-size: 15px;
+    font-weight: bold;
+}
+.image1 {
+    position: relative;
+    width: 100%;
+    height: 90%;
+    display: inline-block;
+
+}
+
+.image__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+}
+
+.image__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+
+.image__overlay--blur {
+    backdrop-filter: blur(5px);
+}
+
+.image__overlay--primary {
+    background: rgba(101, 92, 92, 0.6);
+}
+
+.image__overlay > * {
+    transform: translateY(20px);
+    transition: transform 0.25s;
+}
+
+.image__overlay:hover {
+    opacity: 1;
+}
+
+.image__overlay:hover > * {
+    transform: translateY(0);
+}
+
+.image__title {
+    font-size: 2em;
+    font-weight: bold;
+}
+.texthere :hover{
+    color: #6e55b4;
+    text-decoration: none;
+}
+
+.mv-hot-2 {
+    width: 608px;
+    height: 350px;
+    margin: 10px;
+    margin-bottom: 50px;
+    float: left;
+}
+.mv-hot-3 {
+    width: 400px;
+    height: 400px;
+    margin: 5px 50px 10px 10px;
+    float: right;
+    padding-left: 5px;
+}
+.song-3{
+    width: 190px;
+    height: 130px;
+    margin: 10px 10px 40px 10px;
+    /*padding-right: 20px;*/
+}
+.song-4{
+    width: 190px;
+    height: 130px;
+    margin: 10px 10px 30px 10px;
+    float: right;
+    padding-left: 10px;
+    position: relative;
+    bottom: 350px;
+}
+.copyright{
+    height: 150px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #888;
+    margin-right: 4px;
+}
+
+.z-logo{
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    background-image: url(https://zjs.zadn.vn/zmp3-desktop/releases/v0.1.31/images/logo-mp-3.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.z-license-info{
+    margin-left: 10px;
+}
+
+.z-copyright{
+    font-size: 12px;
+}
